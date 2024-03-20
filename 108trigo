@@ -2,12 +2,12 @@
 
 import sys
 from src.display_help import display_help
-
+from src.check_arg import check_arg
 
 def main(argv: list[str]) -> int:
     if len(argv) == 2 and argv[1] == "-h":
-        return display_help()
-    #check_arg(argv[1:])
+        return display_usage()
+    check_arg(argv[1:])
     return 0
 
 if __name__ == "__main__":
