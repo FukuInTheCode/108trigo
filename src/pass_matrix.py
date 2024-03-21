@@ -13,11 +13,10 @@ def next_perfect_square(x) -> int:
 
 def get_matrix(abrs: list[str]) -> list[list[float]]:
     inside_list = []
+    list_str = abrs[1:]
     nbr = next_perfect_square(len(abrs[1:]))
-    num_sublist = int(math.sqrt(nbr))
-    nbr_nul = nbr - len(abrs[1:])
-    inside_list.extend(float(num_str) for num_str in abrs[1:])
-    inside_list.extend([0.0] * nbr_nul)
-    sublists = [inside_list[i:i + num_sublist] for i in
-                range(0, len(inside_list), num_sublist)]
-    return sublists
+    if len(abrs[1:]) != nbr:
+        exit(84)
+    for i in range(0, len(list_str), int(math.isqrt(nbr))):
+        inside_list.append([float(abr) for abr in list_str[i:i + int(math.isqrt(nbr))]])
+    return inside_list
